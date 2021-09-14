@@ -1,12 +1,10 @@
 language: node_js
 node_js:
-  - "14"
+  - "12"
 before_script:
   - npm install
 script:
-  - ng lint
-  - ng test --watch=false
-  - ng serve
+  - ng build --prod
 deploy:
   provider: pages
   local_dir: ./dist/nation_sound
