@@ -6,7 +6,7 @@ before_script:
 script:
   - ng lint
   - ng test --watch=false
-  - ng build --prod
+  - ng serve
 deploy:
   provider: pages
   local_dir: ./dist/nation_sound
