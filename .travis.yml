@@ -3,11 +3,11 @@ node_js:
   - "14"
 before_script:
   - npm install
-script: npm run build
+script: ng build --prod
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN 
+  github-token: $GITHUB_TOKEN
   on:
     branch: main
 notifications:
