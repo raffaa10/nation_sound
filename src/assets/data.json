@@ -1,0 +1,207 @@
+{
+  "artists": [
+      {
+          "name": "Zaz"
+      },
+      {
+          "name": "Vianney"
+      },
+      {
+          "name": "Philippe Etchebest"
+      },
+      {
+          "name": "ABBA"
+      },
+      {
+          "name": "Therapie Taxi"
+      },
+      {
+          "name": "I.A.M"
+      },
+      {
+          "name": "Animatrice en culture Bio"
+      },
+      {
+          "name": "Alessandro Marcello"
+      }
+  ],
+  "styles": [
+      {
+          "name": "Chanson Française"
+      },
+      {
+          "name": "Rock"
+      },
+      {
+          "name": "Country"
+      },
+      {
+          "name": "Baroque"
+      },
+      {
+          "name": "Rap"
+      },
+      {
+          "name": "POP"
+      },
+      {
+          "name": "Animation"
+      },
+      {
+          "name": "Marché"
+      }
+  ],
+  "places": [
+      {
+          "name": "Scène n° 1",
+          "lat": 43.64042562131116,
+          "lng": 3.8299315972159143,
+          "type": 0
+      },
+      {
+          "name": "Scène n° 2",
+          "lat": 43.64382103124017,
+          "lng": 3.831869512696522,
+          "type": 0
+      },
+      {
+          "name": "Scène n° 3",
+          "lat": 43.64439555414309,
+          "lng": 3.8413967191174203,
+          "type": 0
+      },
+      {
+          "name": "Scène n° 4",
+          "lat": 43.641352072983636,
+          "lng": 3.834766298432606,
+          "type": 0
+      },
+      {
+          "name": "Scène n° 5",
+          "lat": 43.6431688634487,
+          "lng": 3.8403452931835824,
+          "type": 0
+      },
+      {
+          "name": "Toilettes gratuites",
+          "lat": 43.644954544126165,
+          "lng": 3.837512880463856,
+          "type": 2
+      },
+      {
+          "name": "Buvette centrale",
+          "lat": 43.641212317595276,
+          "lng": 3.838457018037098,
+          "type": 1
+      }
+  ],
+  "placeTypes": [
+    {
+      "name": "Scène",
+      "icon": "/assets/stage.png"
+    },
+    {
+      "name": "Buvette",
+      "icon": "assets/cafe.png"
+    },
+    {
+      "name": "Toilettes",
+      "icon": "assets/toilet.png"
+    }
+  ],
+  "events": [
+      {
+          "title": "Mama Mia",
+          "date": {
+            "day": 12,
+            "month": 8
+          },
+          "price": "12.99€",
+          "place": 0,
+          "style": 5,
+          "artist": 3
+      },
+      {
+          "title": "Marché fermier",
+          "date": {
+            "day": 26,
+            "month": 9
+          },
+          "price": "12.99€",
+          "place": 0,
+          "style": 7,
+          "artist": 6
+      },
+      {
+          "title": "Petites Chansons Maussades",
+          "date": {
+            "day": 13,
+            "month": 9
+          },
+          "price": "12.99€",
+          "place": 0,
+          "style": 0,
+          "artist": 1
+      },
+      {
+          "title": "Cuisiner sans stress",
+          "date": {
+            "day": 26,
+            "month": 10
+          },
+          "price": "12.99€",
+          "place": 0,
+          "style": 6,
+          "artist": 2
+      },
+      {
+          "title": "Super Concert",
+          "date": {
+            "day": 4,
+            "month": 9
+          },
+          "price": "12.99€",
+          "place": 0,
+          "style": 0,
+          "artist": 0
+      },
+      {
+          "title": "Dansons le MIA",
+          "date": {
+            "day": 6,
+            "month": 12
+          },
+          "price": "12.99€",
+          "place": 0,
+          "style": 4,
+          "artist": 5
+      },
+      {
+          "title": "Le retour du cuisinier",
+          "date": {
+            "day": 16,
+            "month": 11
+          },
+          "price": "12.99€",
+          "place": 0,
+          "style": 0,
+          "artist": 0
+      },
+      {
+          "title": "Concerto pour hautbois en ré mineur",
+          "date": {
+            "day": 16,
+            "month": 11
+          },
+          "price": "12.99€",
+          "place": 0,
+          "style": 3,
+          "artist": 7
+      }
+  ],
+  "messages": [
+      "Attention, l'accès à la scène n° 3 est interdit !",
+      "En raison de météo défavorable ce weekend, tous les concerts de plein-air sont annulées",
+      "L'accès à la buvette est réservé au personnel"
+  ]
+}

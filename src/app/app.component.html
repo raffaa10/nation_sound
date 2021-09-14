@@ -1,0 +1,77 @@
+<!-- Entete de l'application -->
+<div class="modal" *ngIf="modalStatus != 2" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card *ngIf="modalStatus == 0">
+    <mat-card-header>
+      <mat-card-title>Connection au serveur...</mat-card-title>
+    </mat-card-header>
+    <mat-card-content fxLayout="row" fxLayoutAlign="center center">
+      <mat-spinner></mat-spinner>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="modalStatus == 1">
+    <mat-card-header>
+      <mat-card-title>Erreur</mat-card-title>
+    </mat-card-header>
+    <mat-card-content fxLayout="row" fxLayoutAlign="center center">
+      <p>Impossible de se connecter au serveur</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<header id="mainHeader">
+  <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="center center">
+    <h1>Nation Sounds</h1>
+  </mat-toolbar>
+
+  <main fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <!-- Dérouler les messages vers la gauche -->
+    <button mat-mini-fab (click)="switchHeaderMessageLeft()" fxLayout="row" fxLayoutAlign="center center">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    <!-- Contenu du message sélectionné -->
+    <mat-card>
+      <mat-card-content fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <mat-icon color="accent">info</mat-icon>
+        <p>{{headerMessage}}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Dérouler les messages vers la droite -->
+    <button mat-mini-fab (click)="switchHeaderMessageRight()" fxLayout="row" fxLayoutAlign="center center">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </main>
+
+  <aside>
+    <!-- Badges de navigation des messages -->
+    <nav fxLayout="row" fxLayoutAlign="center center">
+      <span matRipple class="nav-point" (click)="switchHeaderMessageToId(0)" *ngIf="headerMessageId != 0"></span>
+      <span class="nav-point-activated" *ngIf="headerMessageId == 0"></span>
+      <span matRipple class="nav-point" (click)="switchHeaderMessageToId(1)" *ngIf="headerMessageId != 1"></span>
+      <span class="nav-point-activated" *ngIf="headerMessageId == 1"></span>
+      <span matRipple class="nav-point" (click)="switchHeaderMessageToId(2)" *ngIf="headerMessageId != 2"></span>
+      <span class="nav-point-activated" *ngIf="headerMessageId == 2"></span>
+    </nav>
+  </aside>
+</header>
+
+<!-- Contenu principal de l'application -->
+<main id="mainContent">
+  <h1 class="meta">Contenu principal</h1>
+
+  <!-- Permet de passer d'une page à une autre à l'aide des routers -->
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Pied de page de l'application -->
+<footer id="mainFooter" fxLayout="row" fxLayoutAlign="center stretch">
+  <h1 class="meta">Pied de page</h1>
+
+  <nav fxLayout="row" fxLayoutAlign="center stretch" fxLayoutGap="10px">
+    <a mat-raised-button routerLink="/program">Programme</a>
+    <a mat-raised-button routerLink="/map">Carte</a>
+    <a mat-raised-button href="billeterie.html" target="_blank">Billeterie <mat-icon>open_in_new</mat-icon></a>
+  </nav>
+</footer>

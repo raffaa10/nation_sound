@@ -1,0 +1,21 @@
+<mat-card matRipple fxLayout="row" fxLayoutAlign="stretch space-between">
+  <section class="text-align-left" fxLayout="column" fxLayoutAlign="space-between" fxFlex="50%">
+      <p *ngIf="title" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon color="accent">title</mat-icon><strong>{{title}}</strong>
+      </p>
+      <p *ngIf="date" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon color="accent">event</mat-icon>{{date}}
+      </p>
+      <p *ngIf="place" fxLayout="row" fxLayoutAlign="start center">
+          <mat-icon color="accent">place</mat-icon>{{place}}
+      </p>
+  </section>
+  <section class="text-align-right" fxLayout="column" fxLayoutAlign="space-between" fxFlex="50%">
+      <p *ngIf="style" fxLayout="row" fxLayoutAlign="start center"><mat-icon color="accent">category</mat-icon>{{style}}
+      </p>
+      <p *ngIf="artist" fxLayout="row" fxLayoutAlign="start center"><mat-icon color="accent">people</mat-icon>{{artist}}
+      </p>
+      <p *ngIf="price" fxLayout="row" fxLayoutAlign="start center"><mat-icon color="accent">sell</mat-icon>{{price}}
+      </p>
+  </section>
+</mat-card>

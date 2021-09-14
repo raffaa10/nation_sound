@@ -1,0 +1,95 @@
+@use 'sass:map';
+@use '~@angular/material' as mat;
+
+.modal {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1000;
+}
+
+.modal mat-spinner {
+  margin: 10px;
+}
+
+.nav-point, .nav-point-activated {
+  border-radius: 100%;
+  height: 16px;
+  width: 16px;
+  margin: 10px;
+}
+
+.nav-point {
+  cursor: pointer;
+}
+
+#mainHeader {
+  padding: 0px 16px;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: larger;
+}
+
+#mainContent {
+  margin-bottom: 56px;
+}
+
+#mainFooter {
+  position: fixed;
+  bottom: 0px;
+  padding: 10px;
+  width: 100%;
+}
+
+@mixin color($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  header {
+    background-color: mat.get-color-from-palette($primary-palette, 700);
+  }
+
+  footer {
+    background-color: mat.get-color-from-palette($primary-palette, 700);
+  }
+
+  .modal {
+    background-color: mat.get-color-from-palette($accent-palette, 800);
+  }
+
+  .nav-point {
+    border: mat.get-color-from-palette($accent-palette, 800) 2px solid;
+  }
+
+  .nav-point-activated {
+    background-color: mat.get-color-from-palette($accent-palette, 800);
+  }
+}
+
+@mixin typography($theme) {
+  // Get the typography config from the theme.
+  $typography-config: mat.get-typography-config($theme);
+
+  footer {
+    font-family: mat.font-family($typography-config);
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($theme);
+  }
+
+  $typography-config: mat.get-typography-config($theme);
+  @if $typography-config != null {
+    @include typography($theme);
+  }
+}

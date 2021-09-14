@@ -1,0 +1,10 @@
+<google-map width="100%" height="700px" [options]="options">
+  <map-marker *ngFor="let markerPos of markers" #marker="mapMarker" [position]="markerPos" (mapClick)="openInfoWindow(marker)"
+    [options]="marker.options"></map-marker>
+  <map-info-window>
+    <h4>{{currentMarkerName}}</h4>
+    <p>Type de lieu: {{currentMarkerType}}</p>
+  </map-info-window>
+  <map-directions-renderer *ngIf="(directionsResults$ | async) as directionsResults" [directions]="directionsResults">
+  </map-directions-renderer>
+</google-map>

@@ -1,0 +1,69 @@
+<header fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <section fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <mat-form-field appearance="fill">
+      <mat-label>
+        <mat-icon>people</mat-icon> Trier par artiste
+      </mat-label>
+      <mat-select multiple [formControl]="artistSelectControl">
+        <mat-option *ngFor="let artist of artists" [value]="artist">
+          {{artist}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>
+        <mat-icon>category</mat-icon> Trier par style
+      </mat-label>
+      <mat-select multiple [formControl]="styleSelectControl">
+        <mat-option *ngFor="let style of styles" [value]="style">
+          {{style}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </section>
+
+  <section fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <mat-form-field appearance="fill">
+      <mat-label>
+        <mat-icon>event</mat-icon> Trier par date
+      </mat-label>
+      <mat-select multiple [formControl]="dateSelectControl">
+        <mat-option *ngFor="let date of dates" [value]="date">
+          {{date | date:'d MMMM'}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>
+        <mat-icon>place</mat-icon> Trier par lieu
+      </mat-label>
+      <mat-select multiple [formControl]="placeSelectControl">
+        <mat-option *ngFor="let place of places" [value]="place">
+          {{place}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </section>
+</header>
+
+<main id="events" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="stretch stretch">
+  <app-program-event id="programEvent" (click)="selectEvent(event.id)" color="accent" fxFlex.md="0 0 49.99%" fxFlex.gt-md="0 0 32.99%"
+    *ngFor="let event of events" [title]="event.title" [date]="event.date | date:'d MMMM'" [place]="event.place" [style]="event.style"
+    [artist]="event.artist" [price]="event.price"></app-program-event>
+</main>
+
+<nav id="overlay" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <a href="/map#{{selectedEvent}}"><button mat-fab color="accent">
+        <mat-icon>gps_fixed</mat-icon>
+      </button>
+    </a>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <button routerLink="billeterie.html" mat-fab color="primary">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </div>
+</nav>
